@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <!--The viewport meta tag is used to improve the presentation and behavior of the samples
+      on iOS devices-->
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no">
+    <title></title>
+
+    <link rel="stylesheet" href="http://js.arcgis.com/3.8/js/dojo/dijit/themes/claro/claro.css">
+    <link rel="stylesheet" href="https://js.arcgis.com/3.27/esri/css/esri.css">
+    <link rel="stylesheet" href="layout.css"/>
+
+    <script>var dojoConfig = { parseOnLoad: true };</script>
+    <script src="https://js.arcgis.com/3.27/"></script>
+    <script src="map.js"></script>
+
+    <style> 
+      body, html, #main { 
+        margin: 0; 
+        padding: 0; 
+        height: 100%; 
+        width: 100%;
+      }
+    </style> 
+    
+
+  </head>
+
+  <body class="claro">
+    <div data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="design:'headline', gutters:false" style="width:100%;height:100%;margin:0px;">
+      <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'top'">
+        <b>Click to find the service area polygon</b>
+  
+        <div style="width: 400px; margin: 10px">
+          
+          <ol data-dojo-type="dijit/form/HorizontalRuleLabels"
+            data-dojo-props="
+              container: 'topDecoration',
+              style: 'height: 1.2em; font-weight: bold; margin: 0 12px;'">
+            <li>0</li>
+            <li>0:20</li>
+            <li>0:40</li>
+            <li>1:00</li>
+            <li>1:20</li>
+            <li>1:40</li>
+            <li>2:00</li>
+          </ol>
+          <div data-dojo-type="dijit/form/HorizontalRule"
+            data-dojo-props="
+              container: 'topDecoration',
+              count: 7,
+              style: 'height: 5px; margin: 0 12px;'">
+          </div>
+          <input id="hslider" value="60" type="range"
+            data-dojo-type="dijit/form/HorizontalSlider"
+            data-dojo-props="
+              minimum: 0,
+              maximum: 120,
+              showButtons: false,
+              discreteValues: 25">
+          <div style="padding-top: 10px; text-align: center;">Travel time: <strong id="decValue"></strong> seconds</div>
+        </div>
+  
+      </div> 
+  
+      <div id="map" dojotype="dijit/layout/ContentPane" data-dojo-props="region:'center'"></div>    
+    </div>
+  </body>
+
+</html>
+
+<!-- <div id="map" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="region:'center'"></div> -->
